@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BoxInHole : MonoBehaviour
+public class LevelPass1 : MonoBehaviour
 {
-    public bool isInHole;
+    public GameObject laserTrap;
+    public GameObject boxChecker;
+
     // Start is called before the first frame update
     void Start()
     {
-        isInHole = false;
+        
     }
 
     // Update is called once per frame
@@ -19,10 +21,11 @@ public class BoxInHole : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Box"))
+        if (other.gameObject.CompareTag("Box") && boxChecker.GetComponent<BoxChecker1>().flag)
         {
-            Debug.Log("碰撞成功");
-            isInHole = true;
+            Destroy(other.gameObject);
+            Destroy(laserTrap);
+            //Destroy(gameObject);
         }
     }
 }

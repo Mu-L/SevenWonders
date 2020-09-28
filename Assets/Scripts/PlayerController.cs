@@ -4,19 +4,23 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    //移动跳跃
     public float runSpeed;
-    public float jumpSpeed;
+    public float jumpSpeed;  
 
     private Rigidbody2D myRigidbody;
     private bool isGround;
     private BoxCollider2D myFeet;
     private bool isOneWayPlatform;
+    private VirtualGun vg;
+
 
     // Start is called before the first frame update
     void Start()
     {
         myRigidbody = GetComponent<Rigidbody2D>();
         myFeet = GetComponent<BoxCollider2D>();
+        vg = GameObject.Find("VirtualGun").GetComponent<VirtualGun>();
     }
 
     // Update is called once per frame
@@ -25,7 +29,7 @@ public class PlayerController : MonoBehaviour
         CheckGrounded();
         Flip();
         Run();
-        Jump();
+        Jump();        
     }
 
     void Flip()
@@ -62,6 +66,7 @@ public class PlayerController : MonoBehaviour
             {
                 Vector2 jumpVelocity = new Vector2(0f, jumpSpeed);
                 myRigidbody.velocity = Vector2.up * jumpVelocity;
+                vg.Shoot3();
             }
         }
 
@@ -72,6 +77,7 @@ public class PlayerController : MonoBehaviour
         isGround = myFeet.IsTouchingLayers(LayerMask.GetMask("Foreground"))
                 || myFeet.IsTouchingLayers(LayerMask.GetMask("Platform"))
                 || myFeet.IsTouchingLayers(LayerMask.GetMask("OneWayPlatform"))
+                || myFeet.IsTouchingLayers(LayerMask.GetMask("LevelPass"))
                 || myFeet.IsTouchingLayers(LayerMask.GetMask("Items"));
         isOneWayPlatform = myFeet.IsTouchingLayers(LayerMask.GetMask("OneWayPlatform"));
     }

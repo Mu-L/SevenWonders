@@ -78,6 +78,7 @@ public class PlayerController : MonoBehaviour
                 || myFeet.IsTouchingLayers(LayerMask.GetMask("Platform"))
                 || myFeet.IsTouchingLayers(LayerMask.GetMask("OneWayPlatform"))
                 || myFeet.IsTouchingLayers(LayerMask.GetMask("LevelPass"))
+                || myFeet.IsTouchingLayers(LayerMask.GetMask("DestructibleLayer"))
                 || myFeet.IsTouchingLayers(LayerMask.GetMask("Items"));
         isOneWayPlatform = myFeet.IsTouchingLayers(LayerMask.GetMask("OneWayPlatform"));
     }

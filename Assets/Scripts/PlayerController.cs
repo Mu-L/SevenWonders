@@ -63,7 +63,7 @@ public class PlayerController : MonoBehaviour
         if (isGround)
         {
             if(Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
-            {
+            {                
                 Vector2 jumpVelocity = new Vector2(0f, jumpSpeed);
                 myRigidbody.velocity = Vector2.up * jumpVelocity;
                 vg.Shoot3();

@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 46313662}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0, z: 0}
+  m_LocalPosition: {x: 0.1, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 326389219}
@@ -77,6 +77,9 @@ MonoBehaviour:
   bullet: {fileID: 1364705607882500986, guid: f48c531f6237d47669298755d3dd815f, type: 3}
   gunHole: {fileID: 46313663}
   cam: {fileID: 0}
+  upForce: 10
+  intervalTime1: 0.5
+  intervalTime2: 1
 --- !u!1 &1759640280741276563
 GameObject:
   m_ObjectHideFlags: 0
@@ -88,9 +91,11 @@ GameObject:
   - component: {fileID: 1759640280741276567}
   - component: {fileID: 1759640280741276564}
   - component: {fileID: 1759640280741276565}
+  - component: {fileID: 7636981103037153291}
   - component: {fileID: 1759640280741276585}
   - component: {fileID: 1759640280741276562}
   - component: {fileID: 1759640280741276566}
+  - component: {fileID: 4397260106908670732}
   m_Layer: 11
   m_Name: Player
   m_TagString: Player
@@ -183,6 +188,39 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!60 &7636981103037153291
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1759640280741276563}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0.1875, y: 0.1875, z: 0.1875, w: 0.25}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.24651527, y: 0.26000214}
+      - {x: -0.3503809, y: 0.17007601}
+      - {x: -0.33644104, y: -0.2395457}
+      - {x: -0.25, y: -0.31204784}
+      - {x: 0.20469761, y: -0.308563}
+      - {x: 0.3294716, y: -0.24651527}
+      - {x: 0.33644104, y: 0.1875}
+      - {x: 0.013034821, y: 0.33318257}
 --- !u!58 &1759640280741276585
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -239,3 +277,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   runSpeed: 5
   jumpSpeed: 8
+--- !u!114 &4397260106908670732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1759640280741276563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41d5a9cfeb69b094491754c8a3938751, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHP: 0

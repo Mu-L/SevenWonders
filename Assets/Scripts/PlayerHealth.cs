@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     public int playerHP;
+    public int coinQuantity;
 
     // Start is called before the first frame update
     void Start()

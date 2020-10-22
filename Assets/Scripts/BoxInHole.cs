@@ -21,8 +21,15 @@ public class BoxInHole : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Box"))
         {
-            Debug.Log("碰撞成功");
             isInHole = true;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Box"))
+        {
+            isInHole = false;
         }
     }
 }

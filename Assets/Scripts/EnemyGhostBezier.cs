@@ -7,6 +7,7 @@ public class EnemyGhostBezier : MonoBehaviour
     public int health;
     public int damage;
     public Transform[] routes;
+    public float upForce;
 
     private int routeToGo;
     public float speed;
@@ -16,6 +17,7 @@ public class EnemyGhostBezier : MonoBehaviour
     private bool goAhead;
 
     private PlayerHealth playerHealth;
+    private Rigidbody2D playerRb2d;
 
     // Use this for initialization
     void Start()
@@ -26,6 +28,7 @@ public class EnemyGhostBezier : MonoBehaviour
         goAhead = true;
 
         playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
+        playerRb2d = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -119,6 +122,12 @@ public class EnemyGhostBezier : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        if (other.CompareTag("Player") && other.GetType().ToString() == "UnityEngine.BoxCollider2D")
+        {
+            playerRb2d.velocity = Vector2.up * upForce;
+            health = 0;
+        }
+
         if (other.CompareTag("Player") && other.GetType().ToString() == "UnityEngine.PolygonCollider2D")
         {
             if (playerHealth != null)

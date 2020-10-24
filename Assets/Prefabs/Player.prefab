@@ -339,5 +339,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41d5a9cfeb69b094491754c8a3938751, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHP: 10
+  playerHP: 3
   coinQuantity: 0

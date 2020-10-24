@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1453761362008507337}
   m_Layer: 10
   m_Name: EnemyFireSlimeSub
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -142,7 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 559b50947e5991f4e8e1126c4e41c074, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 5
+  health: 1
   damage: 1
   speed: 1
   waitTime: 0.5

@@ -8,6 +8,7 @@ TagManager:
   - CameraFollow
   - Box
   - Bullet
+  - EnemyGhost
   layers:
   - Default
   - TransparentFX

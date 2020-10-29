@@ -9,6 +9,7 @@ TagManager:
   - Box
   - Bullet
   - EnemyGhost
+  - JumpDust
   layers:
   - Default
   - TransparentFX

@@ -6,13 +6,16 @@ public class PlayerController : MonoBehaviour
 {
     //移动跳跃
     public float runSpeed;
-    public float jumpSpeed;  
+    public float jumpSpeed;
+    public Transform jumpDust;
+    public Transform jumpDustPos;
 
     private Rigidbody2D myRigidbody;
     private bool isGround;
     private BoxCollider2D myFeet;
     private bool isOneWayPlatform;
     private VirtualGun vg;
+    private bool canDoubleJump;
 
 
     // Start is called before the first frame update
@@ -63,10 +66,26 @@ public class PlayerController : MonoBehaviour
         if (isGround)
         {
             if(Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
-            {                
+            {
+                jumpDust.position = jumpDustPos.position;
+                JumpDust.Anim.SetTrigger("Jump");
                 Vector2 jumpVelocity = new Vector2(0f, jumpSpeed);
                 myRigidbody.velocity = Vector2.up * jumpVelocity;
-                vg.Shoot3();
+                canDoubleJump = true;
+            }
+        }
+        else
+        {
+            if(canDoubleJump)
+            {
+                if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
+                {
+                    jumpDust.position = jumpDustPos.position;
+                    JumpDust.Anim.SetTrigger("Jump");
+                    Vector2 jumpVelocity = new Vector2(0f, jumpSpeed);
+                    myRigidbody.velocity = Vector2.up * jumpVelocity;
+                    canDoubleJump = false;
+                }
             }
         }
 

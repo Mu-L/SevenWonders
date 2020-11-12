@@ -14,9 +14,16 @@ public class PlayerHealth : MonoBehaviour
     public Sprite fullHeart;
     public Sprite emptyHeart;
 
+    public float hitBoxCdTime;
+
+    private ScreenFlash sf;
+    private PolygonCollider2D pl2d;
+
     // Start is called before the first frame update
     void Start()
     {
+        sf = GetComponent<ScreenFlash>();
+        pl2d = GetComponent<PolygonCollider2D>();
     }
 
     // Update is called once per frame
@@ -58,9 +65,19 @@ public class PlayerHealth : MonoBehaviour
 
     public void DamagePlayer(int damage)
     {
-        if(health > 0)
+        sf.FlashScreen();
+        pl2d.enabled = false;
+        StartCoroutine(ShowPlayerHitBox());
+
+        if (health > 0)
         {
             health -= damage;
-        }        
+        }
+    }
+
+    IEnumerator ShowPlayerHitBox()
+    {
+        yield return new WaitForSeconds(hitBoxCdTime);
+        pl2d.enabled = true;
     }
 }

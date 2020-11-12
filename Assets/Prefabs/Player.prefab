@@ -12,7 +12,7 @@ GameObject:
   m_Layer: 11
   m_Name: GunHole
   m_TagString: Untagged
-  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -176,6 +176,7 @@ GameObject:
   - component: {fileID: 1759640280741276562}
   - component: {fileID: 1759640280741276566}
   - component: {fileID: 4397260106908670732}
+  - component: {fileID: 1489549520}
   m_Layer: 11
   m_Name: Player
   m_TagString: Player
@@ -294,19 +295,23 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.104522705, y: 0.28171468}
-      - {x: -0.21739197, y: 0.2308774}
-      - {x: -0.29286194, y: 0.10587108}
-      - {x: -0.30727768, y: -0.05606413}
-      - {x: -0.2574234, y: -0.19131932}
-      - {x: -0.1557045, y: -0.24558243}
-      - {x: 0.19874191, y: -0.24406719}
-      - {x: 0.2686119, y: -0.16757911}
-      - {x: 0.30843735, y: -0.007063091}
-      - {x: 0.2821808, y: 0.14081168}
-      - {x: 0.24406815, y: 0.20763248}
-      - {x: 0.17022705, y: 0.259862}
-      - {x: 0.013034821, y: 0.3025198}
+    - - {x: -0.10228348, y: 0.31081963}
+      - {x: -0.2196312, y: 0.24878788}
+      - {x: -0.31077576, y: 0.13049889}
+      - {x: -0.335701, y: -0.032247543}
+      - {x: -0.2842903, y: -0.18684101}
+      - {x: -0.15570068, y: -0.30603218}
+      - {x: 0.0064048767, y: -0.3301983}
+      - {x: 0.13907242, y: -0.3061514}
+      - {x: 0.2054596, y: -0.2709341}
+      - {x: 0.27483368, y: -0.1982851}
+      - {x: 0.31180954, y: -0.11406422}
+      - {x: 0.33306503, y: -0.00034618378}
+      - {x: 0.32126617, y: 0.089921}
+      - {x: 0.3000908, y: 0.14305115}
+      - {x: 0.25526047, y: 0.2143488}
+      - {x: 0.19037628, y: 0.26657772}
+      - {x: 0.037662506, y: 0.32714748}
 --- !u!58 &1759640280741276585
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -336,7 +341,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.00006484985, y: -0.31517416}
+  m_Offset: {x: -0.0051136017, y: -0.54552937}
   m_SpriteTilingProperty:
     border: {x: 0.1875, y: 0.1875, z: 0.1875, w: 0.25}
     pivot: {x: 0.5, y: 0.5}
@@ -347,7 +352,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.49440002, y: 0.074780226}
+  m_Size: {x: 0.1784935, y: 0.46419525}
   m_EdgeRadius: 0
 --- !u!114 &1759640280741276566
 MonoBehaviour:
@@ -364,7 +369,7 @@ MonoBehaviour:
   runSpeed: 5
   jumpSpeed: 14
   jumpDust: {fileID: 0}
-  jumpDustPos: {fileID: 0}
+  jumpDustPos: {fileID: 1024326808}
 --- !u!114 &4397260106908670732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -392,3 +397,19 @@ MonoBehaviour:
     type: 3}
   emptyHeart: {fileID: -4195582761621981391, guid: ccb9d3b569b3fd648bc8b44365fdabbb,
     type: 3}
+  hitBoxCdTime: 1.5
+--- !u!114 &1489549520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1759640280741276563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4d6c4f90c81743c5bb9f2e985647c7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  img: {fileID: 0}
+  time: 0.25
+  flashColor: {r: 0.9811321, g: 0.041651815, b: 0.041651815, a: 0.19607843}

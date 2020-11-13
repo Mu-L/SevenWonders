@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
+    public GameObject retryPanel;
     public int health;
     public int numOfHearts;
     public int coinQuantity;
@@ -32,6 +33,7 @@ public class PlayerHealth : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
+            retryPanel.SetActive(true);
         }
         
         if (health > numOfHearts)

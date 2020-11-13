@@ -12,13 +12,13 @@ public class CameraFollow : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-#if UNITY_STANDALONE_OSX
-        Screen.SetResolution(2688, 1536, false);
-#elif UNITY_STANDALONE_WIN
-        Screen.SetResolution(1344, 768, false); 
-#elif UNITY_STANDALONE_LINUX
-        Screen.SetResolution(1344, 768, false);
-#endif
+//#if UNITY_STANDALONE_OSX
+//        Screen.SetResolution(2688, 1536, false);
+//#elif UNITY_STANDALONE_WIN
+//        Screen.SetResolution(1344, 768, false); 
+//#elif UNITY_STANDALONE_LINUX
+//        Screen.SetResolution(1344, 768, false);
+//#endif
         GameController.player = GameObject.FindGameObjectWithTag("Player");
         GameController.camFollow = GameObject.FindGameObjectWithTag("CameraFollow").GetComponent<CameraFollow>();
     }
